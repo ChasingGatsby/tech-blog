@@ -31,6 +31,7 @@ router.get("/post/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
+    console.log(post)
 
     res.render("post", {
       ...post,
@@ -50,7 +51,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     console.log(userPosts)
 
     res.render("dashboard", {
-      userPosts,
+      ...userPosts,
       logged_in:true
     });
   } catch {
