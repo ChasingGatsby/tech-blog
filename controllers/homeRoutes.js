@@ -47,6 +47,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       where: { user_id: req.session.user_id },
     });
     const userPosts = userData.map((post) => post.get({ plain: true }));
+    console.log();
 
     res.render("dashboard", {
       ...userPosts,
@@ -55,6 +56,14 @@ router.get("/dashboard", withAuth, async (req, res) => {
   } catch {
     res.status(500).json(err);
   }
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+  res.render("login");
 });
 
 module.exports = router;

@@ -15,8 +15,9 @@ Comment.init(
       type: DataTypes.STRING,
     },
     date_created: {
-      type: DataTypes.DataTypes,
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -42,4 +43,4 @@ Comment.init(
   }
 );
 
-module.exports = Comment
+module.exports = Comment;

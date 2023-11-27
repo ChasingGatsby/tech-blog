@@ -15,7 +15,9 @@
         <a href="/" class="p-3 pt-0 ml-3"><button>Home</button></a>
         <a href="/dashboard" class="p-3 pt-0"><button>Dashboard</button></a>
         {{#if logged_in}}
-          <button id="logout">Logout</button>
+          <div class="p-3 pt-0">
+            <button id="logout">Logout</button>
+          </div>
         {{else}}
           <a href="/login" class="p-3 pt-0"><button>Login</button></a>
         {{/if}}

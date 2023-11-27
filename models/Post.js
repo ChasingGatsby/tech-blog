@@ -22,7 +22,7 @@ Post.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      dfeaultValue: DataTypes.NOW
+      defaultValue: DataTypes.NOW
     },
     user_id: {
       type: DataTypes.INTEGER,
