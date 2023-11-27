@@ -31,10 +31,10 @@ router.get("/post/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-    console.log(post)
+    console.log(post);
 
     res.render("post", {
-      ...post,
+      post,
       logged_in: req.session.logged_in,
     });
   } catch {
@@ -48,11 +48,11 @@ router.get("/dashboard", withAuth, async (req, res) => {
       where: { user_id: req.session.user_id },
     });
     const userPosts = userData.map((post) => post.get({ plain: true }));
-    console.log(userPosts)
+    console.log(userPosts);
 
     res.render("dashboard", {
-      ...userPosts,
-      logged_in:true
+      userPosts,
+      logged_in: true,
     });
   } catch {
     res.status(500).json({ error: err.message });
