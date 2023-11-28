@@ -17,18 +17,31 @@
         <a href="/login" class="p-3 pt-0"><button>Login</button></a>
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container container-fluid mt-5 flex-column align-start">
       <div class="card">
-        <div class="card-header custom-maincolor flex-row justify-space-between align-end">
-        <h2 class=>{{name}}</h2>
-        <h4>{{date_created}}</h4>
-        </div>
-        <div class="p-2">
-          <p>{{content}}</p>
-          <button class="btn custom-btn">Fund this Project!</button>
-        </div>
+        {{#each comments as |comment|}}
+          <div
+            class="card-header custom-maincolor flex-row justify-space-between align-end"
+          >
+            <p>{{comment.user.name}} on {{format_date comment.date_created}}</p>
+          </div>
+          <div class="p-2">
+            <p>{{comment.content}}</p>
+          </div>
+        {{/each}}
       </div>
-      
+      <div class="card">
+        {{#each comments as |comment|}}
+          <div
+            class="card-header custom-maincolor flex-row justify-space-between align-end"
+          >
+            <p>{{comment.user.name}} on {{format_date comment.date_created}}</p>
+          </div>
+          <div class="p-2">
+            <p>{{comment.content}}</p>
+          </div>
+        {{/each}}
+      </div>
     </main>
   </body>
 </html>

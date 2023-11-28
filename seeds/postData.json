@@ -1,10 +1,12 @@
 [
   {
     "title": "My Brain Hurts",
-    "content": "No seriously. Trying to code this stuff is making my head spin."
+    "content": "No seriously. Trying to code this stuff is making my head spin.",
+    "user_id": 1
   },
   {
     "title": "I'm going to lose my mind...",
-    "content": "I actually feel my brain getting sucked out my nose..."
+    "content": "I actually feel my brain getting sucked out my nose...",
+    "user_id": 1
   }
 ]
