@@ -3,7 +3,7 @@
     class="card-header custom-maincolor flex-row justify-space-between align-end"
   >
     <h2 class>{{title}}</h2>
-    <h4>{{date_created}}</h4>
+    <h4>{{format_date date_created}}</h4>
   </div>
   <div class="p-2">
     <p>{{content}}</p>
@@ -11,15 +11,16 @@
   </div>
 </div>
 
-{{!-- {{#each comments as |comment|}}
 <div class="card">
-  <div
-    class="card-header custom-maincolor flex-row justify-space-between align-end"
-  >
-    <h2 class>{{title}}</h2>
-    <h4>{{format_date comment.date_created}}</h4>
-  </div>
-  <div class="p-2">
-    <p>{{comment.content}}</p>
-  </div>
-</div> --}}
+  {{#each comments as |comment|}}
+    <div
+      class="card-header custom-maincolor flex-row justify-space-between align-end"
+    >
+      <h3 class>{{comment.user.name}}</h3>
+      <h4>{{format_date comment.date_created}}</h4>
+    </div>
+    <div class="p-2">
+      <p>{{comment.content}}</p>
+    </div>
+  {{/each}}
+</div>
