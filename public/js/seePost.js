@@ -11,6 +11,7 @@ const postRedirect = async (event) => {
   });
   if (response.ok) {
     console.log(response);
+    document.location.replace(`/post/${id}`);
   } else {
     alert("Could not load post!");
   }

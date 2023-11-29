@@ -8,7 +8,11 @@
     </div>
     <div class="p-2">
       <p>{{content}}</p>
-      <button class="btn custom-btn" id="post-link" data-id="{{id}}">See this Post!</button>
+      <a href="/post/{{id}}"><button
+        class="btn custom-btn"
+        id="post-link"
+        data-id="{{id}}"
+      >See this Post!</button></a>
     </div>
   </div>
 {{/each}}
