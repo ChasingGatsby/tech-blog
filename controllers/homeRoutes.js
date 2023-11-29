@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
@@ -32,10 +33,12 @@ router.get("/post/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
+    console.log(post)
 
-    res.render("post", post);
-  } catch {
+    res.render("post", { post, logged_in: req.session.logged_in });
+  } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
@@ -51,7 +54,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       userPosts,
       logged_in: req.session.logged_in,
     });
-  } catch {
+  } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });

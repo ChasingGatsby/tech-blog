@@ -11,7 +11,7 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      await document.location.replace("/dashboard");
+      window.location.replace("/dashboard");
       console.log(response)
     } else {
       alert(response.statusText);
@@ -33,7 +33,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
