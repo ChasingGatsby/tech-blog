@@ -19,29 +19,21 @@
       </nav>
     </header>
     <main class="container container-fluid mt-5 flex-column align-start">
-      <div class="card">
-        {{#each comments as |comment|}}
-          <div
-            class="card-header custom-maincolor flex-row justify-space-between align-end"
-          >
-            <p>{{comment.user.name}} on {{format_date comment.date_created}}</p>
+      <div class="col-md-6">
+        <form>
+          <h2>New Post</h2>
+          <div class="form-group">
+            <label>Title:</label>
+            <input class="form-input" type ="text" id="post-title" required />
           </div>
-          <div class="p-2">
-            <p>{{comment.content}}</p>
+          <div class="form-group">
+            <label>Content:</label>
+            <div>
+            <input class="form-textarea custom-textarea" type ="text" id="post-content" placeholder="help me" />
+            </div>
           </div>
-        {{/each}}
-      </div>
-      <div class="card">
-        {{#each comments as |comment|}}
-          <div
-            class="card-header custom-maincolor flex-row justify-space-between align-end"
-          >
-            <p>{{comment.user.name}} on {{format_date comment.date_created}}</p>
-          </div>
-          <div class="p-2">
-            <p>{{comment.content}}</p>
-          </div>
-        {{/each}}
+          <button class ="btn custom-btn" type="submit" id="newpost-btn">Create New Post</button>
+        </form>
       </div>
     </main>
   </body>

@@ -3,7 +3,7 @@
   color: white;
 }
 
-.custom-btn{
+.custom-btn {
   background-color: #352f44;
   color: white;
 }
@@ -11,4 +11,11 @@
 .custom-maincolor {
   background-color: #352f44 !important;
   color: white !important;
+}
+
+.custom-textarea {
+  height: 200px;
+  width: 100%;
+  vertical-align: top;
+  word-wrap: break-word;
 }
