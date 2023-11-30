@@ -1,8 +1,8 @@
 <h2>Your Posts!</h2>
 <div class="mb-5">
   <a href="/newpost">
-<button class="btn custom-btn">CREATE NEW POST</button>
-</a>
+    <button class="btn custom-btn">CREATE NEW POST</button>
+  </a>
 </div>
 {{#each userPosts as |post|}}
   <div class="card">
@@ -14,7 +14,12 @@
     </div>
     <div class="p-2">
       <p>{{post.content}}</p>
-      <a href="/post/{{post.id}}"><button class="btn custom-btn" id="post-link" data-id="{{post.id}}">See this Post!</button></a>
+      <a href="/post/{{post.id}}"><button
+          class="btn custom-btn"
+          id="post-link"
+          data-id="{{post.id}}"
+        >See this Post!</button></a><a href="/post/{{post.id}}/update"><button class="btn custom-btn">Edit this
+        Post!</button></a>
     </div>
   </div>
 {{/each}}
