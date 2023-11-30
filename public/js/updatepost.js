@@ -4,6 +4,7 @@ const updatePostHandler = async (event) => {
   const title = document.querySelector("#post-title").value;
   const content = document.querySelector("#post-content").value;
   const postId = document.getElementById("update-btn").getAttribute("data-id");
+  console.log(postId)
 
 
   if (title && content) {
